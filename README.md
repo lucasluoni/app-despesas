@@ -15,19 +15,19 @@
 
 <h1>Rodar localmente</h1>
 
-<h2>1.Clonar o projeto</h2>
+<h3>1.Clonar o projeto</h3>
 
 ```bash
 git clone https://github.com/lucasluoni/app-despesas.git
 ```
 
-<h2>2.Instalar dependências<h2>
+<h3>2.Instalar dependências</h3>
 
 ```bash
 yarn
 ```
 
-<h2>3.Rodar o projeto</h2>
+<h3>3.Rodar o projeto</h3>
 
 ```bash
 yarn dev
