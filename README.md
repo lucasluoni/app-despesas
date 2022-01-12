@@ -2,9 +2,9 @@
 <p>O objetivo do projeto é exercitar os seguintes conceitos:</p>
 
 <ul>
-  <li>✓ Criar aplicações React em TypeScript</li>
-  <li>✓ Utilizar Bootstrap</li>
-  <li>✓ Implementar roteamento com React Router</li>
+  <li>Criar aplicações React em TypeScript</li>
+  <li>Utilizar Bootstrap</li>
+  <li>Implementar roteamento com React Router</li>
 </ul>
 
 <p>Os dados exibidos são buscados de um Back End desenvolvido em Node JS.</p>
@@ -16,15 +16,19 @@
 <h1>Rodar localmente</h1><hr>
 
 <h2>1.Clonar o projeto</h2>
+
 ```bash
 git clone https://github.com/lucasluoni/app-despesas.git
 ```
-<h4>2.Instalar dependências<h4>
+
+<h2>2.Instalar dependências<h2>
+
 ```bash
 yarn
 ```
 
-<h5>3.Rodar o projeto</h5>
+<h2>3.Rodar o projeto</h2>
+
 ```bash
 yarn dev
 ```
@@ -32,6 +36,6 @@ yarn dev
 <p><strong>Obs.:</strong> É necessário também clonar e rodar o backend do repositório <a href="#" target="_blank">json-server-despesas</a></p>
 
 <ul>Teck Stack</ul>
-<li>✓ React</li>
-<li>✓ Bootstrap</li>
-<li>✓ React-Router</li>
+<li>React</li>
+<li>Bootstrap</li>
+<li>React-Router</li>
