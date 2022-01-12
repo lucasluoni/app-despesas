@@ -1,9 +1,30 @@
-O projeto consiste em uma aplicação simplificada de gestão de despesas pessoais desenvolvida utilizando React, Bootstrap e React Router. A aplicação exibe a lista de todas as despesas de um determinado ano/mês selecionado e a soma das despesas
+<p>O projeto consiste em uma aplicação simplificada de gestão de despesas pessoais desenvolvida utilizando React, Bootstrap e React Router. A aplicação exibe a lista de todas as despesas de um determinado ano/mês selecionado e a soma das despesas.</p>
 
-O objetivo do projeto é exercitar os seguintes conceitos:
-✓ Criar aplicações React em TypeScript.
-✓ Utilizar Bootstrap.
-✓ Implementar roteamento com React Router
+<ul>O objetivo do projeto é exercitar os seguintes conceitos:</ul>
+<li>✓ Criar aplicações React em TypeScript</li>
+<li>✓ Utilizar Bootstrap</li>
+<li>✓ Implementar roteamento com React Router</li>
 
-Os dados exibidos são buscados de um Back End desenvolvido em Node JS.
-O Back End oferece um único endpoint /despesas que retorna um array de objetos.
+<p>Os dados exibidos são buscados de um Back End desenvolvido em Node JS.</p>
+<p>O Back End oferece um único endpoint /despesas que retorna um array de objetos.</p>
+
+<h1>Demo</h1>
+<a href="http://app-despesas-heroku.herokuapp.com/despesas/2020-06" target="_blank">http://app-despesas-heroku.herokuapp.com/despesas/2020-06</a>
+
+<h1>Rodar localmente</h1><hr>
+
+<h2>1.Clonar o projeto</h2>
+`git clone https://github.com/lucasluoni/app-despesas.git`
+
+<h4>2.Instalar dependências<h4>
+`yarn`
+
+<h5>3.Rodar o projeto</h5>
+`yarn dev`
+
+Obs.: É necessário também clonar e rodar o backend do repositório <a href="#" target="_blank">json-server-despesas</a>
+
+<ul>Teck Stack</ul>
+<li>✓ React</li>
+<li>✓ Bootstrap</li>
+<li>✓ React-Router</li>
