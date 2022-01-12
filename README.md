@@ -41,4 +41,6 @@ yarn dev
 <li>React</li>
 <li>Bootstrap</li>
 <li>React-Router</li>
+<li>NodeJS</li>
+<li>Javascript</li>
 </ul>
