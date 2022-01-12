@@ -13,7 +13,7 @@
 <h1>Demo</h1>
 <a href="http://app-despesas-heroku.herokuapp.com/despesas/2020-06" target="_blank">http://app-despesas-heroku.herokuapp.com/despesas/2020-06</a>
 
-<h1>Rodar localmente</h1><hr>
+<h1>Rodar localmente</h1>
 
 <h2>1.Clonar o projeto</h2>
 
@@ -35,7 +35,10 @@ yarn dev
 
 <p><strong>Obs.:</strong> É necessário também clonar e rodar o backend do repositório <a href="#" target="_blank">json-server-despesas</a></p>
 
-<ul>Teck Stack</ul>
+<h1>Teck Stack</h1>
+
+<ul>
 <li>React</li>
 <li>Bootstrap</li>
 <li>React-Router</li>
+</ul>
