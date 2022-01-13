@@ -9,7 +9,7 @@
 <p>O Back End oferece um único endpoint /despesas que retorna um array de objetos.</p>
 
 <h1>Demo</h1>
-<a href="http://app-despesas-heroku.herokuapp.com/despesas/2020-06" target="_blank">http://app-despesas-heroku.herokuapp.com/despesas/2020-06</a>
+<a href="http://app-despesas-heroku.herokuapp.com/" target="_blank">http://app-despesas-heroku.herokuapp.com/</a>
 
 <h1>Rodar localmente</h1>
 
