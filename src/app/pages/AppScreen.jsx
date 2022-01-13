@@ -27,10 +27,24 @@ const loadingStyles = css({
   height: '100vh',
   overflow: 'hidden'
 })
+const errorStyles = css({
+  display: 'block',
+  width: '25vw',
+  margin: '65px auto 0',
+  padding: '10px',
+  textAlign: 'center',
+  backgroundColor: '#FCA7A7'
+})
+const errorBody = css({
+backgroundColor: 'var(--white-background)',
+height: '100vh',
+overflow: 'hidden'
+})
 
 export default function AppScreen() {
 
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   const monthsJuneToDecember = firstYearAvailableMonths()
   const monthsJanuaryToJune = secondYearAvailableMonths()
@@ -48,9 +62,14 @@ export default function AppScreen() {
 
   // busca os dados do json e passa pro estado (costsData)
   const fetchCosts = async function (year, month){
+    try {
     const initialCosts = await apiGetCostsData(year, month)
     setCostsData(initialCosts)
-  } 
+    setLoading(false)
+  } catch (error) {
+    setError(error.message)
+  }
+} 
 
   useEffect(() => {
     fetchCosts(defaultYearValue, defaultMonthValue)
@@ -58,7 +77,6 @@ export default function AppScreen() {
     setSelectYears(yearsArray)
     setSelectMonths(monthsJuneToDecember)
     history.push(`/despesas/${defaultYearValue}-${defaultMonthValue}`)
-    setLoading(false)
   }, []) // 'deps' array vazio indica que ese useEffect só será executado no carregamento inicial
 
   const getSelectedData = async (year, month) => {
@@ -106,6 +124,15 @@ export default function AppScreen() {
       <Loading />
     </span>
   )
+
+  if (error) {
+    appJsx = (
+        <span css={errorStyles}>
+          {error}
+        </span>
+    )
+  }
+
 
   if (!loading) {
     appJsx = (
