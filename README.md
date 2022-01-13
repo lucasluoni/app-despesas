@@ -1,11 +1,9 @@
 <p>O projeto consiste em uma aplicação simplificada de gestão de despesas pessoais desenvolvida utilizando React, Bootstrap e React Router. A aplicação exibe a lista de todas as despesas de um determinado ano/mês selecionado e a soma das despesas.</p>
-<p>O objetivo do projeto é exercitar os seguintes conceitos:</p>
 
-<ul>
-  <li>Criar aplicações React em TypeScript</li>
-  <li>Utilizar Bootstrap</li>
-  <li>Implementar roteamento com React Router</li>
-</ul>
+<p>O objetivo do projeto é exercitar os seguintes conceitos:</p>
+✓ Criar aplicações React em TypeScript<br />
+✓ Utilizar Bootstrap<br />
+✓ Implementar roteamento com React Router<br /><br />
 
 <p>Os dados exibidos são buscados de um Back End desenvolvido em Node JS.</p>
 <p>O Back End oferece um único endpoint /despesas que retorna um array de objetos.</p>
