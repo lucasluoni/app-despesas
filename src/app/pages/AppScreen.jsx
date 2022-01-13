@@ -6,8 +6,12 @@ import Select from './../components/Select'
 import TableRow from '../components/TableRow';
 import Table from '../components/Table';
 import TotalCosts from '../components/TotalCosts';
+import Loading from './../components/Loading'
 
 import { useHistory, useParams } from "react-router-dom";
+
+/** @jsxImportSource @emotion/react */
+import { jsx, css } from '@emotion/react'
 
 import {
   firstYearAvailableMonths,
@@ -15,7 +19,18 @@ import {
   helperYearsArray,
 } from './../helpers/dateHelpers'
 
+const loadingStyles = css({
+  display: 'flex',
+  alignItems: 'center',
+  margin: 'auto',
+  justifyContent: 'center',
+  height: '100vh',
+  overflow: 'hidden'
+})
+
 export default function AppScreen() {
+
+  const [loading, setLoading] = useState(true)
 
   const monthsJuneToDecember = firstYearAvailableMonths()
   const monthsJanuaryToJune = secondYearAvailableMonths()
@@ -42,7 +57,8 @@ export default function AppScreen() {
     // preenche os selects com os arrays de ano e mês
     setSelectYears(yearsArray)
     setSelectMonths(monthsJuneToDecember)
-    history.push(`/despesas/${defaultYearValue}-${defaultMonthValue}`) 
+    history.push(`/despesas/${defaultYearValue}-${defaultMonthValue}`)
+    setLoading(false)
   }, []) // 'deps' array vazio indica que ese useEffect só será executado no carregamento inicial
 
   const getSelectedData = async (year, month) => {
@@ -84,37 +100,53 @@ export default function AppScreen() {
     {'id': '03', 'description': 'Dia'}, 
     {'id': '04', 'description': 'Valor (R$)'}
   ]
+
+  let appJsx = (
+    <span  css={loadingStyles}>
+      <Loading />
+    </span>
+  )
+
+  if (!loading) {
+    appJsx = (
+      <>
+        <div className='container p-5'>
+        
+          <div className='p-2 mb-4'>          
+            <TotalCosts costs={costs} />
+              
+              <form className="d-flex flex-row">          
+              <Select 
+                label='Ano'
+                value={defaultYearValue} 
+                onChange={handleYearChange}
+              > 
+                {selectYears} 
+              </Select>
+              <Select 
+                label='Mês'
+                value={defaultMonthValue} 
+                onChange={handleMonthChange}
+              >
+                {selectMonths} 
+              </Select>
+              </form>
+          </div>
+
+          <Table labels={labels}>
+            {costs.map((cost) => (
+              <TableRow key={cost.id} cost={cost} />
+            ))}
+          </Table>
+
+        </div>
+      </>    
+    )
+  }
  
   return (
-    <div className='container p-5'>
-      
-      <div className='p-2 mb-4'>          
-        <TotalCosts costs={costs} />
-          
-          <form className="d-flex flex-row">          
-          <Select 
-            label='Ano'
-            value={defaultYearValue} 
-            onChange={handleYearChange}
-          > 
-            {selectYears} 
-          </Select>
-          <Select 
-            label='Mês'
-            value={defaultMonthValue} 
-            onChange={handleMonthChange}
-          >
-            {selectMonths} 
-          </Select>
-          </form>
-      </div>
-
-      <Table labels={labels}>
-        {costs.map((cost) => (
-          <TableRow key={cost.id} cost={cost} />
-        ))}
-      </Table>
-
-    </div>
+  <>
+      {appJsx}
+  </>
   )
 }
